@@ -21,58 +21,14 @@
 			<key>Path</key>
 			<string>___PACKAGENAMEASIDENTIFIER___.m</string>
 		</dict>
-		<key>extension.xml</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Supporting Files</string>
-			</array>
-			<key>Path</key>
-			<string>./extension.xml</string>
-			<key>PathType</key>
-			<string>Group</string>
-		</dict>
-		<key>platformoptions.xml</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Supporting Files</string>
-			</array>
-			<key>Path</key>
-			<string>./platformoptions.xml</string>
-			<key>PathType</key>
-			<string>Group</string>
-		</dict>
-		<key>generateANE.sh</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Supporting Files</string>
-			</array>
-			<key>Path</key>
-			<string>./generateANE.sh</string>
-			<key>PathType</key>
-			<string>Group</string>
-		</dict>
-		<key>debugIPA.sh</key>
-		<dict>
-			<key>Group</key>
-			<array>
-				<string>Supporting Files</string>
-			</array>
-			<key>Path</key>
-			<string>./debugIPA.sh</string>
-			<key>PathType</key>
-			<string>Group</string>
-		</dict>
 		<key>___PACKAGENAME___-Prefix.pch:objC:importFoundation</key>
 		<string>#import &lt;Foundation/Foundation.h&gt;
 </string>
 	</dict>
 	<key>Description</key>
-	<string>This template builds an Adobe AIR native extension for iOS</string>
+	<string>AIR native extension for iOS</string>
 	<key>Identifier</key>
-	<string>com.divij.ane.cocoatouch</string>
+	<string>cc.czq.ane</string>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Nodes</key>
@@ -80,10 +36,6 @@
 		<string>___PACKAGENAME___-Prefix.pch:objC:importFoundation</string>
 		<string>___PACKAGENAMEASIDENTIFIER___.h</string>
 		<string>___PACKAGENAMEASIDENTIFIER___.m</string>
-		<string>extension.xml</string>
-		<string>platformoptions.xml</string>
-		<string>generateANE.sh</string>
-		<string>debugIPA.sh</string>
 	</array>
 	<key>Options</key>
 	<array>
@@ -93,27 +45,11 @@
 			<key>Required</key>
 			<true/>
 			<key>Name</key>
-			<string>Directory containing the AIR sdk: /</string>
+			<string>Directory of the AIR sdk: /</string>
 			<key>Description</key>
 			<string>This is the path to the directory containing the AIR SDK</string>
 			<key>EmptyReplacement</key>
-			<string>/Applications/Adobe Flash Builder 4.6/sdks/4.6.0/</string>
-			<key>NotPersisted</key>
-			<false/>
-			<key>Type</key>
-			<string>text</string>
-		</dict>
-		<dict>
-			<key>Identifier</key>
-			<string>extensionSWC</string>
-			<key>Required</key>
-			<false/>
-			<key>Name</key>
-			<string>Native extension&apos;s swc file (optional): /</string>
-			<key>Description</key>
-			<string>This is the native extension&apos;s swc file</string>
-			<key>EmptyReplacement</key>
-			<string></string>
+			<string>/Users/czq/Downloads/AIR/AIR_13.0</string>
 			<key>NotPersisted</key>
 			<false/>
 			<key>Type</key>
@@ -174,7 +110,6 @@
 				<string>AudioToolbox</string>
 				<string>CFNetwork</string>
 				<string>QuartzCore</string>
-				<string>OpenGLES</string>
 				<string>CoreLocation</string>
 				<string>CoreMedia</string>
 				<string>CoreVideo</string>
@@ -195,76 +130,6 @@
 				<string>-ObjC</string>
 				<key>SKIP_INSTALL</key>
 				<string>YES</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>___PACKAGENAME___.ane</string>
-			<key>BuildPhases</key>
-			<array>
-				<dict>
-					<key>Class</key>
-					<string>ShellScript</string>
-					<key>ShellPath</key>
-					<string>/bin/bash</string>
-					<key>ShellScript</key>
-					<string>
-								chmod 755 &quot;$PROJECT_DIR/$PROJECT_NAME/generateANE.sh&quot;
-								&quot;$PROJECT_DIR/$PROJECT_NAME/generateANE.sh&quot;
-					</string>
-				</dict>
-			</array>
-			<key>ProductType</key>
-			<string>com.apple.product-type.library.static</string>
-			<key>Dependencies</key>
-			<array>
-				<string>0</string>
-			</array>
-			<key>SharedSettings</key>
-			<dict>
-				<key>PRODUCT_NAME</key>
-				<string>___PACKAGENAME___</string>
-				<key>EXECUTABLE_PREFIX</key>
-				<string></string>
-				<key>EXECUTABLE_EXTENSION</key>
-				<string>ane</string>
-				<key>NATIVEEXTENSION_SWC</key>
-				<string>/___VARIABLE_extensionSWC___</string>
-				<key>AIR_SDK_PATH</key>
-				<string>/___VARIABLE_airSDKPath___</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Debug___PACKAGENAME___AIRApp</string>
-			<key>BuildPhases</key>
-			<array>
-				<dict>
-					<key>Class</key>
-					<string>ShellScript</string>
-					<key>ShellPath</key>
-					<string>/bin/bash</string>
-					<key>ShellScript</key>
-					<string>
-								chmod 755 &quot;$PROJECT_DIR/$PROJECT_NAME/debugIPA.sh&quot;
-								&quot;$PROJECT_DIR/$PROJECT_NAME/debugIPA.sh&quot;
-</string>
-				</dict>
-			</array>
-			<key>ProductType</key>
-			<string>com.apple.product-type.application</string>
-			<key>Dependencies</key>
-			<array>
-				<string>1</string>
-			</array>
-			<key>SharedSettings</key>
-			<dict>
-				<key>PRODUCT_NAME</key>
-				<string>Debug___PACKAGENAME___AIRApp</string>
-				<key>NATIVEEXTENSION_SWC</key>
-				<string>/___VARIABLE_extensionSWC___</string>
-				<key>AIR_SDK_PATH</key>
-				<string>/___VARIABLE_airSDKPath___</string>
 			</dict>
 		</dict>
 	</array>

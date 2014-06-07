@@ -2,7 +2,8 @@
 
 echo 'Installing project template for AIR Native Extensions (ANE) for iOS'
 
-BASE_TEMPLATE_PATH="$HOME/Library/Developer/Xcode/Templates"
+#BASE_TEMPLATE_PATH="$HOME/Library/Developer/Xcode/Templates"
+BASE_TEMPLATE_PATH="/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates"
 PROJECT_TEMPLATE_DST_DIR="$BASE_TEMPLATE_PATH/Project Templates/AIR Native Extension/"
 
 force=
